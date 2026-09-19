@@ -5,7 +5,13 @@ window.MATERIALES = {
   {
    "id": "2026-II",
    "titulo": "2026-II",
-   "sillabo": [],
+   "sillabo": [
+    {
+     "titulo": "Silabo Macroeconomia III 2026-I-2",
+     "detalle": "205 KB · actualizado 19/09/2026",
+     "archivo": "materiales/2026-II/silabo/silabo-macroeconomia-iii-2026-i-2.pdf"
+    }
+   ],
    "modulos": [
     {
      "id": "m1",
@@ -28,7 +34,8 @@ window.MATERIALES = {
       {
        "titulo": "PD Solow Ramsey",
        "detalle": "143 KB · actualizado 14/09/2026",
-       "archivo": "materiales/2026-II/m2-solow/ejercicios/pd-solow-ramsey.pdf"
+       "archivo": "materiales/2026-II/m2-solow/ejercicios/pd-solow-ramsey.pdf",
+       "solucionario": "materiales/2026-II/m2-solow/ejercicios/solucionario-pd-solow-ramsey-solucionario.pdf"
       }
      ]
     },
@@ -77,6 +84,16 @@ window.MATERIALES = {
     {
      "titulo": "Final",
      "items": []
+    },
+    {
+     "titulo": "Trabajo Final",
+     "items": [
+      {
+       "titulo": "Trabajo Final - Macroeconomía III",
+       "detalle": "197 KB · actualizado 11/09/2026",
+       "archivo": "materiales/2026-II/evaluaciones/trabajo-final/trabajo-final-macroeconomia-iii.docx"
+      }
+     ]
     }
    ]
   },
@@ -92,6 +109,10 @@ window.MATERIALES = {
     },
     {
      "titulo": "Final",
+     "items": []
+    },
+    {
+     "titulo": "Trabajo Final",
      "items": []
     }
    ]
