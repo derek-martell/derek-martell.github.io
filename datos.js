@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "19/09/2026",
+ "actualizado": "20/09/2026",
  "ciclos": [
   {
    "id": "2026-II",
