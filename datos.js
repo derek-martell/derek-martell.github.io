@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "20/09/2026",
+ "actualizado": "23/09/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -19,10 +19,14 @@ window.MATERIALES = {
      "clases": [],
      "ejercicios": [
       {
-       "titulo": "Macroeconomía III 2026 2 Ejercicios",
-       "detalle": "190 KB · actualizado 30/08/2026",
-       "archivo": "materiales/2026-II/m1-matematica/ejercicios/macroeconomia-iii-2026-2-ejercicios.pdf",
-       "solucionario": "materiales/2026-II/m1-matematica/ejercicios/macroeconomia-iii-2026-2-solucionario.pdf"
+       "titulo": "PD Matemática - PDMatemática",
+       "detalle": "61 KB · actualizado 20/09/2026",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/pd-matematica-pdmatematica.pdf"
+      },
+      {
+       "titulo": "Macroeconomía III 2026 2 Solucionario",
+       "detalle": "244 KB · actualizado 30/08/2026",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/macroeconomia-iii-2026-2-solucionario.pdf"
       }
      ]
     },
@@ -43,7 +47,14 @@ window.MATERIALES = {
      "id": "m3",
      "titulo": "M3 · Ramsey",
      "clases": [],
-     "ejercicios": []
+     "ejercicios": [
+      {
+       "titulo": "PD Solow Ramsey",
+       "detalle": "143 KB · actualizado 14/09/2026",
+       "archivo": "materiales/2026-II/m3-ramsey/ejercicios/pd-solow-ramsey.pdf",
+       "solucionario": "materiales/2026-II/m3-ramsey/ejercicios/solucionario-pd-solow-ramsey-solucionario.pdf"
+      }
+     ]
     },
     {
      "id": "m4",
@@ -95,6 +106,11 @@ window.MATERIALES = {
       }
      ]
     }
+   ],
+   "profesor": "PhD José Oscátegui",
+   "horario": [
+    "Lunes 14:00–17:00",
+    "Miércoles 14:00–17:00"
    ]
   },
   {

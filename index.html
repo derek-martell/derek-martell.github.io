@@ -27,10 +27,10 @@
     <div class="btns"><a class="btn p" href="docencia.html">Ver Docencia</a><a class="btn s" href="#contacto">Contacto</a></div>
   </div>
   <aside class="perfil">
-    <div class="avatar">DM</div>
+    <div class="avatar" id="avatar">DM</div>
     <b>Derek Martell</b><span>Asistente de cátedra</span><span>UNMSM</span>
     <hr>
-    <a href="mailto:7073248@gmail.com">7073248@gmail.com</a>
+    <a href="mailto:derekmartellm@gmail.com">derekmartellm@gmail.com</a>
     <a href="https://www.linkedin.com/in/derek-martell-a51205288/">LinkedIn</a>
     <a href="https://mundo-social.com/">mundo-social.com</a>
     <a href="https://github.com/derek-martell">github.com/derek-martell</a>
@@ -52,9 +52,19 @@
   </div>
   <div class="bloque" id="contacto">
     <h2>Contacto</h2><p class="sec-sub">¿Dudas sobre el material o encontraste un error? Escríbeme.</p>
-    <p><a href="mailto:7073248@gmail.com">7073248@gmail.com</a> · <a href="https://www.linkedin.com/in/derek-martell-a51205288/">LinkedIn</a> · <a href="https://github.com/derek-martell">GitHub</a></p>
+    <p><a href="mailto:derekmartellm@gmail.com">derekmartellm@gmail.com</a> · <a href="https://www.linkedin.com/in/derek-martell-a51205288/">LinkedIn</a> · <a href="https://github.com/derek-martell">GitHub</a></p>
   </div>
 </div></main>
 
 <footer class="pie"><div class="wrap"><span>© Derek Martell</span><span>Publicado con <a href="https://pages.github.com">GitHub Pages</a></span></div></footer>
+<script src="perfil.js"></script>
+<script>
+(function () {
+  var f = window.PERFIL && window.PERFIL.foto, a = document.getElementById("avatar");
+  if (!f || !a) return;
+  var img = new Image();
+  img.onload = function () { a.textContent = ""; img.alt = "Foto de Derek Martell"; a.appendChild(img); };
+  img.src = f;
+})();
+</script>
 </body></html>

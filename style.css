@@ -44,7 +44,8 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn.s{color:var(--accent);background:transparent}
 .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .perfil{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;text-align:center;box-shadow:var(--shadow)}
-.avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#fff;font:700 2.2rem var(--sans)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar{overflow:hidden;width:110px;height:110px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#fff;font:700 2.2rem var(--sans)}
 .perfil b{display:block;font-size:1.1rem}
 .perfil span{display:block;color:var(--mute);font:.88rem var(--sans);margin-top:2px}
 .perfil hr{border:0;border-top:1px solid var(--line);margin:16px 0}

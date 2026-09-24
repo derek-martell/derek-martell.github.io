@@ -104,6 +104,12 @@
     actual = c;
     barra.querySelectorAll("button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-id") === c.id); });
     var t = document.getElementById("ciclo-titulo"); if (t) t.textContent = "Ciclo " + c.id;
+    var chips = document.getElementById("chips");
+    if (chips) {
+      chips.querySelectorAll(".dinamico").forEach(function (x) { x.remove(); });
+      if (c.profesor) { var p = el("span", "chip dinamico", "Profesor: " + c.profesor); chips.appendChild(p); }
+      if (c.horario && c.horario.length) { var h = el("span", "chip dinamico", "Horario: " + c.horario.join(" · ")); chips.appendChild(h); }
+    }
     try { history.replaceState(null, "", "?ciclo=" + encodeURIComponent(c.id)); } catch (e) {}
     pintar(c);
   }
