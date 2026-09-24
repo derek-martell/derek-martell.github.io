@@ -19,14 +19,19 @@ window.MATERIALES = {
      "clases": [],
      "ejercicios": [
       {
+       "titulo": "Parte 1",
+       "detalle": "320 KB · actualizado 23/09/2026",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/parte-1.pdf"
+      },
+      {
+       "titulo": "Parte 2",
+       "detalle": "67 KB · actualizado 23/09/2026",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/parte-2.pdf"
+      },
+      {
        "titulo": "PD Matemática - PDMatemática",
        "detalle": "61 KB · actualizado 20/09/2026",
        "archivo": "materiales/2026-II/m1-matematica/ejercicios/pd-matematica-pdmatematica.pdf"
-      },
-      {
-       "titulo": "Macroeconomía III 2026 2 Solucionario",
-       "detalle": "244 KB · actualizado 30/08/2026",
-       "archivo": "materiales/2026-II/m1-matematica/ejercicios/macroeconomia-iii-2026-2-solucionario.pdf"
       }
      ]
     },
@@ -38,8 +43,7 @@ window.MATERIALES = {
       {
        "titulo": "PD Solow Ramsey",
        "detalle": "143 KB · actualizado 14/09/2026",
-       "archivo": "materiales/2026-II/m2-solow/ejercicios/pd-solow-ramsey.pdf",
-       "solucionario": "materiales/2026-II/m2-solow/ejercicios/solucionario-pd-solow-ramsey-solucionario.pdf"
+       "archivo": "materiales/2026-II/m2-solow/ejercicios/pd-solow-ramsey.pdf"
       }
      ]
     },
