@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "23/09/2026",
+ "actualizado": "24/09/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -19,14 +19,19 @@ window.MATERIALES = {
      "clases": [],
      "ejercicios": [
       {
-       "titulo": "Parte 1",
-       "detalle": "320 KB · actualizado 23/09/2026",
-       "archivo": "materiales/2026-II/m1-matematica/ejercicios/parte-1.pdf"
+       "titulo": "Introducción",
+       "detalle": "391 KB · actualizado 23/09/2026",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/introduccion.pdf"
       },
       {
-       "titulo": "Parte 2",
+       "titulo": "Optimización Estática I",
+       "detalle": "320 KB · actualizado 23/09/2026",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/optimizacion-estatica-i.pdf"
+      },
+      {
+       "titulo": "Optimización Estática II",
        "detalle": "67 KB · actualizado 23/09/2026",
-       "archivo": "materiales/2026-II/m1-matematica/ejercicios/parte-2.pdf"
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/optimizacion-estatica-ii.pdf"
       },
       {
        "titulo": "PD Matemática - PDMatemática",
@@ -55,8 +60,7 @@ window.MATERIALES = {
       {
        "titulo": "PD Solow Ramsey",
        "detalle": "143 KB · actualizado 14/09/2026",
-       "archivo": "materiales/2026-II/m3-ramsey/ejercicios/pd-solow-ramsey.pdf",
-       "solucionario": "materiales/2026-II/m3-ramsey/ejercicios/solucionario-pd-solow-ramsey-solucionario.pdf"
+       "archivo": "materiales/2026-II/m3-ramsey/ejercicios/pd-solow-ramsey.pdf"
       }
      ]
     },
