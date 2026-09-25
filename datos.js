@@ -1,16 +1,16 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "24/09/2026",
+ "actualizado": "25/09/2026",
  "ciclos": [
   {
    "id": "2026-II",
    "titulo": "2026-II",
    "sillabo": [
     {
-     "titulo": "Silabo Macroeconomia III 2026-I-2",
+     "titulo": "Silabo Macroeconomia III 2026-II",
      "detalle": "205 KB · actualizado 19/09/2026",
      "fecha": "2026-09-19",
-     "archivo": "materiales/2026-II/silabo/silabo-macroeconomia-iii-2026-i-2.pdf"
+     "archivo": "materiales/2026-II/silabo/silabo-macroeconomia-iii-2026-ii.pdf"
     }
    ],
    "modulos": [
@@ -62,14 +62,7 @@ window.MATERIALES = {
      "id": "m3",
      "titulo": "M3 · Ramsey",
      "clases": [],
-     "ejercicios": [
-      {
-       "titulo": "PD Solow Ramsey",
-       "detalle": "143 KB · actualizado 14/09/2026",
-       "fecha": "2026-09-14",
-       "archivo": "materiales/2026-II/m3-ramsey/ejercicios/pd-solow-ramsey.pdf"
-      }
-     ]
+     "ejercicios": []
     },
     {
      "id": "m4",
