@@ -1,0 +1,73 @@
+/* Páginas interiores (Docencia, curso). Usa las variables de landing.css. */
+main.interior{padding:48px 0 80px}
+
+.cabecera{background:var(--panel);border-bottom:1px solid var(--line)}
+.cabecera .wrap{padding-top:44px;padding-bottom:38px}
+.migas{font:500 .92rem var(--display);color:var(--mute);margin-bottom:16px}
+.migas a{color:var(--mute);text-decoration:none}
+.migas a:hover{color:var(--verde);text-decoration:underline}
+.cabecera h1{font:800 clamp(2.4rem,5.5vw,3.8rem)/1 var(--display);letter-spacing:-.045em;margin:0 0 12px}
+.cabecera h1 small{font:600 .95rem var(--display);letter-spacing:0;color:var(--verde);background:var(--suave);border-radius:99px;padding:5px 14px;vertical-align:middle;margin-left:10px}
+.cabecera .sec-sub{margin:0;color:var(--mute)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{font:500 .88rem var(--display);background:var(--bg);border:1px solid var(--line);color:var(--mute);border-radius:99px;padding:5px 14px}
+
+/* Docencia: lista de cursos */
+.curso-grande{display:flex;gap:22px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px 30px;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.curso-grande:hover{border-color:var(--verde)}
+.curso-grande h3{margin:0;font:700 1.5rem var(--display);letter-spacing:-.02em}
+.curso-grande p{margin:6px 0 0;color:var(--mute);font-size:1rem}
+.curso-grande .fl{margin-left:auto;font:600 1.6rem var(--display);color:var(--verde)}
+
+/* Página del curso */
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:52px;align-items:start}
+aside.indice{position:sticky;top:24px;font:500 .95rem var(--display)}
+aside.indice p{margin:0 0 10px;color:var(--mute);font-size:.85rem}
+aside.indice a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;color:var(--mute);padding:8px 12px;border-left:2px solid var(--line)}
+aside.indice a:hover{color:var(--ink)}
+aside.indice a.on{color:var(--verde);border-left-color:var(--verde);background:var(--suave)}
+aside.indice a span{opacity:.75}
+
+.ciclos-barra{display:flex;align-items:center;gap:12px;margin-bottom:16px;font:500 .92rem var(--display);color:var(--mute)}
+#ciclos{display:flex;gap:8px;flex-wrap:wrap}
+button.ciclo{cursor:pointer;font:600 .95rem var(--display);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:7px 18px}
+button.ciclo:hover{border-color:var(--verde)}
+button.ciclo.on{background:var(--verde);border-color:var(--verde);color:var(--on)}
+
+.buscar{position:relative;margin-bottom:34px}
+.buscar input{width:100%;font:1rem var(--display);padding:14px 16px 14px 46px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink)}
+.buscar input:focus{outline:3px solid var(--vivo);outline-offset:2px;border-color:var(--vivo)}
+.buscar svg{position:absolute;left:15px;top:15px;width:20px;height:20px;color:var(--mute)}
+
+section.grupo{margin-bottom:44px;scroll-margin-top:24px}
+section.grupo h2{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font:700 1.55rem/1.2 var(--display);letter-spacing:-.025em;margin:0}
+section.grupo h2 .n{font:600 .82rem var(--display);letter-spacing:0;background:var(--suave);color:var(--verde);border-radius:99px;padding:2px 11px}
+section.grupo h3{font:600 .95rem var(--display);color:var(--mute);margin:24px 0 0}
+button.copiar{cursor:pointer;font:600 .8rem var(--display);letter-spacing:0;color:var(--mute);background:transparent;border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+button.copiar:hover{color:var(--verde);border-color:var(--verde)}
+
+ul.mat{list-style:none;margin:8px 0 0;padding:0}
+ul.mat li{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+ul.mat li:first-child{border-top:1px solid var(--line)}
+ul.mat .tipo{flex:none;font:700 .72rem var(--display);letter-spacing:.03em;color:var(--verde);background:var(--suave);border-radius:8px;padding:8px 10px;min-width:46px;text-align:center}
+ul.mat .tit{flex:1;min-width:0}
+ul.mat .tit a{display:block;color:var(--ink);text-decoration:none;font:600 1.08rem var(--display)}
+ul.mat .tit a:hover{color:var(--verde);text-decoration:underline}
+ul.mat .tit small{display:block;color:var(--mute);font-size:.9rem}
+ul.mat a.desc,ul.mat a.sol{font:600 .88rem var(--display);border-radius:99px;padding:7px 15px;text-decoration:none;white-space:nowrap}
+ul.mat a.desc{color:var(--verde);border:1.5px solid var(--verde)}
+ul.mat a.desc:hover{background:var(--suave)}
+ul.mat a.sol{background:var(--verde);color:var(--on)}
+ul.mat a.sol:hover{background:var(--vivo)}
+ul.mat li.vacio{display:block;color:var(--mute);font-style:italic;border:1px dashed var(--line);border-radius:14px;text-align:center;padding:18px;margin-top:8px}
+#sin-resultados{display:none;text-align:center;color:var(--mute);padding:34px;font-family:var(--display)}
+
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr;gap:22px}
+  aside.indice{position:static;display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
+  aside.indice p{display:none}
+  aside.indice a{border:1px solid var(--line);border-radius:99px;white-space:nowrap}
+  ul.mat li{flex-wrap:wrap}
+  .curso-grande{padding:22px}
+}
+@media print{.barra,.buscar,aside.indice,#tema,.ciclos-barra,button.copiar{display:none}}

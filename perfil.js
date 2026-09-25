@@ -1,2 +1,2 @@
 /* GENERADO por publicar.py. No editar a mano. */
-window.PERFIL = {"foto": "foto/perfil.jpg?v=1790340688"};
+window.PERFIL = {"foto": "foto/perfil.jpg?v=1790340688", "cv": "cv/derek-martell-cv.pdf?v=1790339647"};

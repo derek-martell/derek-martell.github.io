@@ -11,6 +11,10 @@
     if (txt !== undefined) e.textContent = txt;
     return e;
   }
+  /* Quita tildes y pasa a minúsculas: «optimizacion» encuentra «Optimización» */
+  function limpiar(s) {
+    return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  }
   function ext(url) {
     var m = /\.([a-z0-9]+)$/i.exec(url || "");
     return m ? m[1].toUpperCase() : "ARCH";
@@ -23,7 +27,7 @@
   }
   function fila(m) {
     var li = el("li");
-    li.setAttribute("data-texto", (m.titulo + " " + (m.detalle || "")).toLowerCase());
+    li.setAttribute("data-texto", limpiar(m.titulo + " " + (m.detalle || "")));
     li.appendChild(el("div", "tipo", ext(m.archivo)));
     var c = el("div", "tit");
     var a = el("a", null, m.titulo);
@@ -142,7 +146,7 @@
   /* Buscador */
   var q = document.getElementById("buscar"), vacio = document.getElementById("sin-resultados");
   if (q) q.addEventListener("input", function () {
-    var t = q.value.trim().toLowerCase(), visibles = 0;
+    var t = limpiar(q.value.trim()), visibles = 0;
     document.querySelectorAll("section.grupo").forEach(function (g) {
       var hay = 0;
       g.querySelectorAll("li[data-texto]").forEach(function (li) {
