@@ -109,9 +109,9 @@ window.MATERIALES = {
      "items": [
       {
        "titulo": "Trabajo Final - Macroeconomía III",
-       "detalle": "197 KB · actualizado 11/09/2026",
-       "fecha": "2026-09-11",
-       "archivo": "materiales/2026-II/evaluaciones/trabajo-final/trabajo-final-macroeconomia-iii.docx"
+       "detalle": "168 KB · actualizado 25/09/2026",
+       "fecha": "2026-09-25",
+       "archivo": "materiales/2026-II/evaluaciones/trabajo-final/trabajo-final-macroeconomia-iii.pdf"
       }
      ]
     }
