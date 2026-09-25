@@ -1,4 +1,4 @@
-﻿/* Paleta editorial: esmeralda de bosque, pizarra grafito y un acento lat├│n */
+/* Paleta editorial: esmeralda de bosque, pizarra grafito y un acento latón */
 :root{
   --bg:#f6f7f4;--panel:#ffffff;--ink:#1b2420;--mute:#55615b;--line:#dde2dd;
   --verde:#0f4c3a;--vivo:#1d7556;--suave:#e5eee8;--ambar:#9c6b16;--on:#ffffff;
@@ -47,7 +47,7 @@ h1{font:800 clamp(3rem,7.4vw,5.6rem)/.95 var(--display);letter-spacing:-.045em;m
 .boton:hover{background:var(--vivo);border-color:var(--vivo);color:var(--on);transform:translateY(-1px);box-shadow:0 8px 20px rgba(15,76,58,.18)}
 .boton:active{transform:translateY(0);box-shadow:none}
 
-/* Gr├ífico de Solow */
+/* Gráfico de Solow */
 figure.lamina{margin:0}
 .lamina{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px 22px 26px}
 .lamina svg{width:100%;height:auto;display:block;overflow:visible}
@@ -81,7 +81,7 @@ section.bloque{padding:72px 0;border-top:1px solid var(--line)}
 h2{font:700 clamp(1.7rem,3.4vw,2.4rem)/1.1 var(--display);letter-spacing:-.03em;margin:0 0 8px}
 .sub{color:var(--mute);margin:0 0 32px;max-width:52ch}
 
-/* Lo ├║ltimo del curso */
+/* Lo último del curso */
 .curso{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:56px;align-items:start}
 ul.ultimo{list-style:none;margin:0;padding:0}
 ul.ultimo li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
@@ -98,7 +98,7 @@ ul.ultimo a.sol:hover{background:var(--vivo);color:var(--on)}
 #clase-hor{white-space:pre-line}
 .clase strong{font-family:var(--display)}
 
-/* Qu├® hago */
+/* Qué hago */
 dl.filas{margin:0}
 .fila{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:40px;padding:28px 0;border-bottom:1px solid var(--line)}
 .fila:first-child{border-top:1px solid var(--line)}
@@ -106,7 +106,7 @@ dt{font:700 1.3rem var(--display);letter-spacing:-.02em}
 dd{margin:0;max-width:60ch}
 .yo{display:flex;gap:22px;align-items:center;margin-bottom:26px}
 
-/* Monograma DM con insignia acad├®mica */
+/* Monograma DM con insignia académica */
 .sello{flex:none;display:flex;flex-direction:column;align-items:center;gap:12px}
 .monograma{position:relative;width:150px;height:192px;border-radius:24px;overflow:hidden;background:linear-gradient(158deg,var(--bosque) 0%,var(--bosque-hondo) 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 12px 28px rgba(10,47,37,.22);transition:transform .3s cubic-bezier(.3,.7,.2,1),box-shadow .3s}
 .monograma svg{width:100%;height:100%;display:block}
@@ -167,7 +167,7 @@ ul.datos li:last-child{border:0}
 /* Proyectos */
 .enlaces{display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:12px;font:600 .98rem var(--display)}
 
-/* Sombras de elevaci├│n (m├ís marcadas en modo oscuro) */
+/* Sombras de elevación (más marcadas en modo oscuro) */
 .lamina,.perfil{box-shadow:var(--sombra)}
 
 /* Proyectos en tarjetas */
@@ -182,7 +182,7 @@ ul.datos li:last-child{border:0}
 .btn-link{font:600 .95rem var(--display);border:1.5px solid var(--verde);color:var(--verde);border-radius:99px;padding:8px 16px;text-decoration:none}
 .btn-link:hover{background:var(--suave)}
 
-/* Atajos del gr├ífico */
+/* Atajos del gráfico */
 .atajos{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .atajos button{cursor:pointer;font:600 .9rem var(--display);color:var(--ink);background:transparent;border:1.5px solid var(--line);border-radius:99px;padding:6px 15px;touch-action:manipulation;transition:background-color var(--suave-t),border-color var(--suave-t),color var(--suave-t),transform .12s}
 .atajos button:hover{border-color:var(--verde)}

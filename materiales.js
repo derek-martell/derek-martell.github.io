@@ -1,4 +1,4 @@
-﻿/* Dibuja la p├ígina del curso a partir de datos.js (generado por publicar.py). */
+/* Dibuja la página del curso a partir de datos.js (generado por publicar.py). */
 (function () {
   var D = window.MATERIALES || { ciclos: [] };
   var cont = document.getElementById("contenido"), indice = document.getElementById("indice-lista"),
@@ -11,7 +11,7 @@
     if (txt !== undefined) e.textContent = txt;
     return e;
   }
-  /* Quita tildes y pasa a min├║sculas: ┬½optimizacion┬╗ encuentra ┬½Optimizaci├│n┬╗ */
+  /* Quita tildes y pasa a minúsculas: «optimizacion» encuentra «Optimización» */
   function limpiar(s) {
     return (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
@@ -53,7 +53,7 @@
     return ul;
   }
   function proximamente() {
-    var ul = el("ul", "mat"); ul.appendChild(el("li", "vacio", "Pr├│ximamente")); return ul;
+    var ul = el("ul", "mat"); ul.appendChild(el("li", "vacio", "Próximamente")); return ul;
   }
   function grupo(id, titulo, n, cuerpo) {
     var s = el("section", "grupo"); s.id = id;
@@ -83,7 +83,7 @@
     var q = document.getElementById("buscar"); if (q) q.value = "";
     var vacio = document.getElementById("sin-resultados"); if (vacio) vacio.style.display = "none";
 
-    grupo("sillabo", "S├¡labo", c.sillabo.length, [c.sillabo.length ? lista(c.sillabo) : proximamente()]);
+    grupo("sillabo", "Sílabo", c.sillabo.length, [c.sillabo.length ? lista(c.sillabo) : proximamente()]);
     var pendientes = [];
     c.modulos.forEach(function (mod) {
       var n = mod.clases.length + mod.ejercicios.length, cuerpo = [];
@@ -102,13 +102,13 @@
     if (nEval) grupo("pruebas", "Pruebas dadas", nEval, cuerpoEval);
     if (pendientes.length) {
       var s = el("section", "grupo"); s.id = "proximos";
-      var h = el("h2", null, "Pr├│ximamente "); h.appendChild(el("span", "n", pendientes.length));
+      var h = el("h2", null, "Próximamente "); h.appendChild(el("span", "n", pendientes.length));
       s.appendChild(h);
-      s.appendChild(el("p", "nota", "Todav├¡a no tienen material publicado."));
+      s.appendChild(el("p", "nota", "Todavía no tienen material publicado."));
       var ul = el("ul", "pronto");
       pendientes.forEach(function (t) { ul.appendChild(el("li", null, t)); });
       s.appendChild(ul); cont.appendChild(s);
-      enlaceIndice("proximos", "Pr├│ximamente", pendientes.length);
+      enlaceIndice("proximos", "Próximamente", pendientes.length);
     }
 
     var enlaces = indice.querySelectorAll("a");
@@ -124,7 +124,7 @@
     }
   }
 
-  /* Selector de ciclo: el m├ís reciente con material (o el pedido por ?ciclo=) */
+  /* Selector de ciclo: el más reciente con material (o el pedido por ?ciclo=) */
   var ciclos = D.ciclos || [];
   if (!ciclos.length) { cont.appendChild(proximamente()); return; }
   var pedido = null;
@@ -140,14 +140,14 @@
     if (chips) {
       chips.querySelectorAll(".dinamico").forEach(function (x) { x.remove(); });
       if (c.profesor) { var p = el("span", "chip dinamico", "Profesor: " + c.profesor); chips.appendChild(p); }
-      if (c.horario && c.horario.length) { var h = el("span", "chip dinamico", "Horario: " + c.horario.join(" ┬À ")); chips.appendChild(h); }
+      if (c.horario && c.horario.length) { var h = el("span", "chip dinamico", "Horario: " + c.horario.join(" · ")); chips.appendChild(h); }
     }
     try { history.replaceState(null, "", "?ciclo=" + encodeURIComponent(c.id) + location.hash); } catch (e) {}
     pintar(c);
   }
   ciclos.forEach(function (c) {
     var b = el("button", "ciclo", c.id); b.type = "button"; b.setAttribute("data-id", c.id);
-    if (!total(c)) b.title = "Sin material publicado a├║n";
+    if (!total(c)) b.title = "Sin material publicado aún";
     b.addEventListener("click", function () { elegir(c); });
     barra.appendChild(b);
   });
@@ -158,7 +158,7 @@
   }
 
   var act = document.getElementById("actualizado");
-  if (act && D.actualizado) act.textContent = "├Ültima actualizaci├│n: " + D.actualizado;
+  if (act && D.actualizado) act.textContent = "Última actualización: " + D.actualizado;
 
   /* Buscador */
   var q = document.getElementById("buscar"), vacio = document.getElementById("sin-resultados");

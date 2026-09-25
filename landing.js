@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   var ALFA = 0.33, ND = 0.08, KMAX = 20, YMAX = 1.7;
   var X0 = 52, X1 = 500, Y0 = 330, Y1 = 20;
   function X(k) { return X0 + (k / KMAX) * (X1 - X0); }
@@ -6,7 +6,7 @@
   function $(id) { return document.getElementById(id); }
   function coma(n, d) { return n.toFixed(d).replace(".", ","); }
 
-  /* ---------- Dos econom├¡as, dos ritmos de crecimiento ---------- */
+  /* ---------- Dos economías, dos ritmos de crecimiento ---------- */
   var GA = 0.02, GB = 0.04, UMAX = 44, BASE = 330;
   var svg = $("torres"), rango = $("anios");
   if (svg && rango) {
@@ -32,7 +32,7 @@
         b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
       });
     }
-    /* Con enCurso, solo se redibuja el gr├ífico: la lectura y los atajos esperan al valor final */
+    /* Con enCurso, solo se redibuja el gráfico: la lectura y los atajos esperan al valor final */
     function pintar(t, enCurso) {
       var vA = Math.pow(1 + GA, t), vB = Math.pow(1 + GB, t);
       var u = Math.min(UMAX, 285 / Math.max(vB, 3));
@@ -41,24 +41,24 @@
       gd.setAttribute("y1", yDup); gd.setAttribute("y2", yDup);
       $("duplicar-t").setAttribute("y", yDup - 6);
       var nA = $("n-a"), nB = $("n-b");
-      nA.textContent = "├ù" + coma(vA, 1); nA.setAttribute("y", yA - 10);
-      nB.textContent = "├ù" + coma(vB, 1); nB.setAttribute("y", yB - 10);
-      $("anios-v").textContent = t + (t === 1 ? " a├▒o" : " a├▒os");
-      rango.setAttribute("aria-valuetext", t + " a├▒os");
+      nA.textContent = "×" + coma(vA, 1); nA.setAttribute("y", yA - 10);
+      nB.textContent = "×" + coma(vB, 1); nB.setAttribute("y", yB - 10);
+      $("anios-v").textContent = t + (t === 1 ? " año" : " años");
+      rango.setAttribute("aria-valuetext", t + " años");
       if (enCurso) return;
       var ratio = vB / vA;
       var txt = t === 0
-        ? "Ambos pa├¡ses parten con el mismo ingreso."
-        : "En " + t + (t === 1 ? " a├▒o" : " a├▒os") + ", el ingreso del pa├¡s A se multiplica por " + coma(vA, 1) +
-          " y el del pa├¡s B por " + coma(vB, 1) + ". Solo dos puntos m├ís de crecimiento dejan a B con " +
+        ? "Ambos países parten con el mismo ingreso."
+        : "En " + t + (t === 1 ? " año" : " años") + ", el ingreso del país A se multiplica por " + coma(vA, 1) +
+          " y el del país B por " + coma(vB, 1) + ". Solo dos puntos más de crecimiento dejan a B con " +
           coma(ratio, 1) + (ratio < 1.05 ? " vez" : " veces") + " el ingreso de A.";
       var lec = $("lectura"), enl = document.createElement("a");
-      enl.href = "macro3.html#m2"; enl.textContent = "m├│dulos 2 y 4";
-      lec.textContent = txt + " As├¡ se ve el crecimiento en los ";
+      enl.href = "macro3.html#m2"; enl.textContent = "módulos 2 y 4";
+      lec.textContent = txt + " Así se ve el crecimiento en los ";
       lec.appendChild(enl);
-      lec.appendChild(document.createTextNode(". Simplificaci├│n: ritmo constante, sin altibajos."));
-      $("torres-d").textContent = "A los " + t + " a├▒os, el pa├¡s A multiplic├│ su ingreso por " + coma(vA, 1) +
-        " y el pa├¡s B por " + coma(vB, 1) + ".";
+      lec.appendChild(document.createTextNode(". Simplificación: ritmo constante, sin altibajos."));
+      $("torres-d").textContent = "A los " + t + " años, el país A multiplicó su ingreso por " + coma(vA, 1) +
+        " y el país B por " + coma(vB, 1) + ".";
       marcarAtajos(t);
     }
 
@@ -86,7 +86,7 @@
       };
       animando = requestAnimationFrame(paso);
     }
-    /* Al arrastrar, se dibuja como m├íximo una vez por cuadro */
+    /* Al arrastrar, se dibuja como máximo una vez por cuadro */
     rango.addEventListener("input", function () {
       tocado = true; parar();
       if (pendiente) return;
@@ -100,7 +100,7 @@
       });
     });
 
-    /* Las torres crecen cuando el gr├ífico entra en pantalla, salvo que la persona ya lo haya movido */
+    /* Las torres crecen cuando el gráfico entra en pantalla, salvo que la persona ya lo haya movido */
     var meta = +rango.value;
     pintar(meta);
     if (quiere && "IntersectionObserver" in window) {
@@ -115,12 +115,12 @@
     }
   }
 
-  /* ---------- Lo ├║ltimo del curso, le├¡do de datos.js ---------- */
+  /* ---------- Lo último del curso, leído de datos.js ---------- */
   var D = window.MATERIALES || { ciclos: [] };
   function fmt(iso) { var p = (iso || "").split("-"); return p.length === 3 ? p[2] + "/" + p[1] + "/" + p[0] : ""; }
   function juntar(c) {
     var t = [];
-    c.sillabo.forEach(function (x) { t.push({ x: x, de: "S├¡labo" }); });
+    c.sillabo.forEach(function (x) { t.push({ x: x, de: "Sílabo" }); });
     c.modulos.forEach(function (m) {
       m.clases.concat(m.ejercicios).forEach(function (x) { t.push({ x: x, de: m.titulo }); });
     });
@@ -148,7 +148,7 @@
       lista.appendChild(li);
     });
     if (!items.length) {
-      var v = document.createElement("li"); v.textContent = "A├║n no hay material publicado en este ciclo."; lista.appendChild(v);
+      var v = document.createElement("li"); v.textContent = "Aún no hay material publicado en este ciclo."; lista.appendChild(v);
     }
   }
   if (ciclo && (ciclo.profesor || ciclo.horario)) {
@@ -172,7 +172,7 @@
     var etiqueta = cp.querySelector(".copiar-t"), aviso = $("copiar-aviso"), reloj = null;
     var correo = cp.getAttribute("data-correo") || "";
     function listo(ok) {
-      etiqueta.textContent = ok ? "┬íCopiado!" : "C├│pialo a mano";
+      etiqueta.textContent = ok ? "¡Copiado!" : "Cópialo a mano";
       cp.classList.toggle("hecho", ok);
       if (aviso) aviso.textContent = ok ? "Correo copiado al portapapeles." : "No se pudo copiar; selecciona el correo a mano.";
       clearTimeout(reloj);
