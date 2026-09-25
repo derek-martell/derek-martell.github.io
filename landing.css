@@ -29,11 +29,11 @@ a{color:var(--verde)}
 :root[data-theme="dark"] #tema .luna{display:none}
 
 /* Portada */
-.portada .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center;padding-top:72px;padding-bottom:72px}
+.portada .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:56px;align-items:center;padding-top:72px;padding-bottom:72px}
 h1{font:800 clamp(3rem,7.4vw,5.6rem)/.95 var(--display);letter-spacing:-.045em;margin:0 0 28px}
 .entrada{font-size:1.2rem;max-width:32ch;color:var(--mute);margin:0 0 32px}
 .acciones{display:flex;flex-wrap:wrap;gap:12px}
-.boton{font:600 1rem var(--display);padding:14px 24px;border-radius:999px;text-decoration:none;border:2px solid var(--verde)}
+.boton{font:600 1rem var(--display);padding:13px 22px;border-radius:999px;text-decoration:none;border:2px solid var(--verde)}
 .boton.lleno{background:var(--verde);color:var(--on)}
 .boton.borde{color:var(--verde)}
 .boton:hover{background:var(--vivo);border-color:var(--vivo);color:var(--on)}
