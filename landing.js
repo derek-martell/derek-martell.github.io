@@ -132,7 +132,7 @@
   var f = window.PERFIL && window.PERFIL.foto, r = $("rostro");
   if (f && r) {
     var img = new Image();
-    img.onload = function () { r.textContent = ""; img.alt = "Foto de Derek Martell"; r.appendChild(img); };
+    img.onload = function () { r.textContent = ""; img.alt = "Rocky, personaje de Project Hail Mary"; r.appendChild(img); };
     img.src = f;
   }
 })();
