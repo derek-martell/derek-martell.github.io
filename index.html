@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="es" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Derek Martell | Economía, investigación y docencia</title>
 <meta name="description" content="Derek Martell: estudiante de Economía en la UNMSM, fundador de Mundo Social y asistente de cátedra de Macroeconomía III. Investigación, divulgación y material de docencia.">
 <link rel="canonical" href="https://derek-martell.github.io/">
@@ -16,7 +18,7 @@
 <meta name="twitter:title" content="Derek Martell | Economía, investigación y docencia">
 <meta name="twitter:description" content="Estudiante de Economía en la UNMSM, fundador de Mundo Social y asistente de cátedra de Macroeconomía III.">
 <meta name="twitter:image" content="https://derek-martell.github.io/og.png">
-<meta name="theme-color" content="#25653f">
+<meta name="theme-color" content="#0f4c3a">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Derek Martell","url":"https://derek-martell.github.io/",
  "jobTitle":"Asistente de cátedra de Macroeconomía III",
@@ -26,7 +28,7 @@
  "address":{"@type":"PostalAddress","addressLocality":"Lima","addressCountry":"PE"},
  "sameAs":["https://orcid.org/0009-0001-7715-3801","https://www.linkedin.com/in/derek-martell-a51205288/","https://github.com/derek-martell","https://mundo-social.com/"]}
 </script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2325653f'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia' font-weight='700' text-anchor='middle' fill='white'%3EDM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c3a'/%3E%3Ctext x='32' y='40' font-size='27' font-family='Georgia' font-weight='700' text-anchor='middle' fill='%23f3eee0'%3EDM%3C/text%3E%3Crect x='23' y='47' width='18' height='2.5' rx='1' fill='%23c9a24a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Schibsted+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="landing.css"><script src="tema.js"></script></head><body>
@@ -57,12 +59,29 @@
     </div>
   </div>
   <aside class="perfil" aria-label="Perfil">
-    <div class="rostro" id="rostro">DM</div>
+    <div class="sello">
+      <div class="monograma" id="monograma">
+        <svg viewBox="0 0 150 192" role="img" aria-labelledby="dm-t">
+          <title id="dm-t">Monograma de Derek Martell</title>
+          <rect class="dm-marco" x="10.5" y="10.5" width="129" height="171" rx="16"/>
+          <text class="dm-letras" x="75" y="84" text-anchor="middle">DM</text>
+          <line class="dm-regla" x1="57" y1="99" x2="93" y2="99"/>
+          <path class="dm-eje" d="M30 113V155H120"/>
+          <path class="dm-curva" pathLength="1" d="M30 152C46 131 66 121 116 115"/>
+          <circle class="dm-punto" cx="116" cy="115" r="2.8"/>
+          <text class="dm-pie" x="75" y="172" text-anchor="middle">ECONOMÍA</text>
+        </svg>
+      </div>
+      <span class="insignia" title="Especialidad académica: Economía, Universidad Nacional Mayor de San Marcos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="sello-f" d="M12 1.5l2.6 1.9 3.2-.1 1 3 2.6 1.9-1 3.1 1 3.1-2.6 1.9-1 3-3.2-.1L12 22.5l-2.6-1.9-3.2.1-1-3-2.6-1.9 1-3.1-1-3.1 2.6-1.9 1-3 3.2.1z"/><path class="sello-c" d="M7.8 12.2l2.8 2.8 5.6-5.8"/></svg>
+        Economía · UNMSM
+      </span>
+    </div>
     <ul class="datos">
       <li>Estudiante de Economía, Universidad Nacional Mayor de San Marcos</li>
-      <li>Fundador de <a href="https://mundo-social.com/">Mundo Social</a></li>
+      <li>Fundador de <a href="https://mundo-social.com/" rel="noopener noreferrer">Mundo Social</a></li>
       <li>Asistente de cátedra de Macroeconomía III</li>
-      <li>ORCID <a href="https://orcid.org/0009-0001-7715-3801">0009-0001-7715-3801</a></li>
+      <li>ORCID <a href="https://orcid.org/0009-0001-7715-3801" rel="noopener noreferrer">0009-0001-7715-3801</a></li>
       <li>Lima, Perú</li>
     </ul>
   </aside>
@@ -77,7 +96,7 @@
     </div>
     <div class="fila">
       <dt>Divulgación</dt>
-      <dd>En Mundo Social publicamos notas, análisis de coyuntura y tableros para que la información económica se entienda sin ser especialista. <a href="https://mundo-social.com/">Visitar mundo-social.com</a></dd>
+      <dd>En Mundo Social publicamos notas, análisis de coyuntura y tableros para que la información económica se entienda sin ser especialista. <a href="https://mundo-social.com/" rel="noopener noreferrer">Visitar mundo-social.com</a></dd>
     </div>
     <div class="fila">
       <dt>Docencia</dt>
@@ -94,8 +113,8 @@
       <h3>Libertad económica y crecimiento en América Latina</h3>
       <p>Efecto de la libertad económica en el crecimiento del PBI de seis países (Perú, Bolivia, Ecuador, Colombia, Guatemala y México), de 1995 a 2023. Tras detectar autocorrelación y heterocedasticidad, se estiman modelos Prais-Winsten y de mínimos cuadrados generalizados factibles.</p>
       <div class="acciones-proyecto">
-        <a class="btn-link" href="https://github.com/derek-martell/Libertad_Econ-mica-">Código y datos en Stata</a>
-        <a class="btn-link" href="https://github.com/derek-martell/Libertad-Econ-mica-en-Am-rica-Latina">Análisis en R</a>
+        <a class="btn-link" href="https://github.com/derek-martell/Libertad_Econ-mica-" rel="noopener noreferrer">Código y datos en Stata</a>
+        <a class="btn-link" href="https://github.com/derek-martell/Libertad-Econ-mica-en-Am-rica-Latina" rel="noopener noreferrer">Análisis en R</a>
       </div>
     </article>
     <article class="tarjeta-proyecto">
@@ -103,7 +122,7 @@
       <h3>Tablero del gasto en la franja electoral</h3>
       <p>Tablero interactivo que ordena los datos oficiales del Plan de Medios de la ONPE: cuánto gasta cada partido, en qué regiones y en qué medios.</p>
       <div class="acciones-proyecto">
-        <a class="btn-link" href="https://mundo-social.com/">Conocer Mundo Social</a>
+        <a class="btn-link" href="https://mundo-social.com/" rel="noopener noreferrer">Conocer Mundo Social</a>
       </div>
     </article>
   </div>
@@ -128,7 +147,7 @@
 <section class="bloque" id="muestra"><div class="wrap">
   <h2>Un ejemplo de divulgación</h2>
   <p class="sub">Por qué un punto de crecimiento importa tanto: mueve el control y compara dos países.</p>
-  <figure class="lamina" style="margin:0">
+  <figure class="lamina">
     <p class="fig-titulo">Un mismo punto de partida, dos ritmos de crecimiento</p>
     <svg id="torres" viewBox="0 0 520 380" role="img" aria-labelledby="torres-t torres-d">
       <title id="torres-t">Dos economías que crecen a distinto ritmo</title>
@@ -162,10 +181,17 @@
 <footer id="contacto"><div class="wrap">
   <h2>Escríbeme</h2>
   <div class="contactos">
-    <a href="mailto:derekmartellm@gmail.com">derekmartellm@gmail.com</a>
-    <a href="https://www.linkedin.com/in/derek-martell-a51205288/">LinkedIn</a>
-    <a href="https://orcid.org/0009-0001-7715-3801">ORCID</a>
-    <a href="https://github.com/derek-martell">GitHub</a>
+    <span class="correo">
+      <a href="mailto:derekmartellm@gmail.com" id="correo">derekmartellm@gmail.com</a>
+      <button type="button" class="copiar-correo" id="copiar-correo" data-correo="derekmartellm@gmail.com" aria-label="Copiar correo al portapapeles">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+        <span class="copiar-t">Copiar</span>
+      </button>
+      <span class="solo-lector" id="copiar-aviso" role="status" aria-live="polite"></span>
+    </span>
+    <a href="https://www.linkedin.com/in/derek-martell-a51205288/" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://orcid.org/0009-0001-7715-3801" rel="noopener noreferrer">ORCID</a>
+    <a href="https://github.com/derek-martell" rel="noopener noreferrer">GitHub</a>
     <a href="#" id="cv-pie" download hidden>CV en PDF</a>
   </div>
   <p class="aviso">Derek Martell. Sitio publicado con GitHub Pages.</p>

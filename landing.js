@@ -17,7 +17,7 @@
       r.setAttribute("rx", 3); r.setAttribute("class", cls); g.appendChild(r);
     }
     function torre(g, cx, v, cls, u) {
-      g.innerHTML = "";
+      g.textContent = "";
       var w = 100, x = cx - w / 2, n = Math.floor(v), i;
       for (i = 0; i < n; i++) rect(g, x, BASE - (i + 1) * u + 1.5, w, u - 3, cls);
       var fr = v - n;
@@ -32,7 +32,8 @@
         b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
       });
     }
-    function pintar(t) {
+    /* Con enCurso, solo se redibuja el gráfico: la lectura y los atajos esperan al valor final */
+    function pintar(t, enCurso) {
       var vA = Math.pow(1 + GA, t), vB = Math.pow(1 + GB, t);
       var u = Math.min(UMAX, 285 / Math.max(vB, 3));
       var yA = torre(ta, 150, vA, "b-a", u), yB = torre(tb, 360, vB, "b-b", u);
@@ -42,50 +43,73 @@
       var nA = $("n-a"), nB = $("n-b");
       nA.textContent = "×" + coma(vA, 1); nA.setAttribute("y", yA - 10);
       nB.textContent = "×" + coma(vB, 1); nB.setAttribute("y", yB - 10);
-      var ratio = vB / vA;
       $("anios-v").textContent = t + (t === 1 ? " año" : " años");
       rango.setAttribute("aria-valuetext", t + " años");
+      if (enCurso) return;
+      var ratio = vB / vA;
       var txt = t === 0
         ? "Ambos países parten con el mismo ingreso."
         : "En " + t + (t === 1 ? " año" : " años") + ", el ingreso del país A se multiplica por " + coma(vA, 1) +
           " y el del país B por " + coma(vB, 1) + ". Solo dos puntos más de crecimiento dejan a B con " +
           coma(ratio, 1) + (ratio < 1.05 ? " vez" : " veces") + " el ingreso de A.";
-      $("lectura").innerHTML = txt + ' Así se ve el crecimiento en los <a href="macro3.html#m2">módulos 2 y 4</a>. ' +
-        "Simplificación: ritmo constante, sin altibajos.";
+      var lec = $("lectura"), enl = document.createElement("a");
+      enl.href = "macro3.html#m2"; enl.textContent = "módulos 2 y 4";
+      lec.textContent = txt + " Así se ve el crecimiento en los ";
+      lec.appendChild(enl);
+      lec.appendChild(document.createTextNode(". Simplificación: ritmo constante, sin altibajos."));
       $("torres-d").textContent = "A los " + t + " años, el país A multiplicó su ingreso por " + coma(vA, 1) +
         " y el país B por " + coma(vB, 1) + ".";
       marcarAtajos(t);
     }
-    var animando = null;
-    rango.addEventListener("input", function () {
+
+    var quiere = !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    var animando = null, pendiente = null, tocado = false;
+    function parar() {
       if (animando) { cancelAnimationFrame(animando); animando = null; }
-      pintar(+rango.value);
+    }
+    /* Lleva el control de un valor a otro con una curva suave */
+    function animar(desde, hasta, dur) {
+      parar();
+      if (!quiere || desde === hasta) { rango.value = hasta; pintar(hasta); return; }
+      var t0 = null, ultimo = null;
+      marcarAtajos(hasta);
+      var paso = function (ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+        var t = Math.round(desde + (hasta - desde) * e);
+        if (p < 1) {
+          if (t !== ultimo) { rango.value = t; pintar(t, true); ultimo = t; }
+          animando = requestAnimationFrame(paso);
+        } else {
+          animando = null; rango.value = hasta; pintar(hasta);
+        }
+      };
+      animando = requestAnimationFrame(paso);
+    }
+    /* Al arrastrar, se dibuja como máximo una vez por cuadro */
+    rango.addEventListener("input", function () {
+      tocado = true; parar();
+      if (pendiente) return;
+      pendiente = requestAnimationFrame(function () { pendiente = null; pintar(+rango.value); });
     });
     atajos.forEach(function (b) {
       b.addEventListener("click", function () {
-        if (animando) { cancelAnimationFrame(animando); animando = null; }
-        rango.value = b.getAttribute("data-val"); pintar(+rango.value);
+        tocado = true;
+        var hasta = +b.getAttribute("data-val"), desde = +rango.value;
+        animar(desde, hasta, Math.min(650, 250 + Math.abs(hasta - desde) * 10));
       });
     });
 
-    /* Único movimiento de la página: las torres crecen cuando el gráfico entra en pantalla */
+    /* Las torres crecen cuando el gráfico entra en pantalla, salvo que la persona ya lo haya movido */
     var meta = +rango.value;
     pintar(meta);
-    var quiere = !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
     if (quiere && "IntersectionObserver" in window) {
       var visto = new IntersectionObserver(function (es) {
         if (!es[0].isIntersecting) return;
         visto.disconnect();
-        var t0 = null, dur = 2200;
-        var paso = function (ts) {
-          if (t0 === null) t0 = ts;
-          var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
-          var t = Math.round(meta * e);
-          rango.value = t; pintar(t);
-          animando = p < 1 ? requestAnimationFrame(paso) : null;
-        };
-        rango.value = 0; pintar(0);
-        animando = requestAnimationFrame(paso);
+        if (tocado) return;
+        rango.value = 0; pintar(0, true);
+        animar(0, meta, 2200);
       }, { threshold: 0.45 });
       visto.observe(svg);
     }
@@ -113,13 +137,13 @@
     items.sort(function (a, b) { return (b.x.fecha || "").localeCompare(a.x.fecha || ""); });
     items.slice(0, 5).forEach(function (r) {
       var li = document.createElement("li"), a = document.createElement("a");
-      a.className = "t"; a.href = r.x.archivo; a.target = "_blank"; a.rel = "noopener"; a.textContent = r.x.titulo;
+      a.className = "t"; a.href = r.x.archivo; a.target = "_blank"; a.rel = "noopener noreferrer"; a.textContent = r.x.titulo;
       var m = document.createElement("span"); m.className = "meta";
       m.textContent = r.de + ", " + fmt(r.x.fecha);
       li.appendChild(a); li.appendChild(m);
       if (r.x.solucionario) {
         var s = document.createElement("a"); s.className = "sol"; s.textContent = "Solucionario";
-        s.href = r.x.solucionario; s.target = "_blank"; s.rel = "noopener"; li.appendChild(s);
+        s.href = r.x.solucionario; s.target = "_blank"; s.rel = "noopener noreferrer"; li.appendChild(s);
       }
       lista.appendChild(li);
     });
@@ -142,11 +166,35 @@
     });
   }
 
-  /* ---------- Foto de perfil, si existe ---------- */
-  var f = window.PERFIL && window.PERFIL.foto, r = $("rostro");
-  if (f && r) {
-    var img = new Image();
-    img.onload = function () { r.textContent = ""; img.alt = "Rocky, personaje de Project Hail Mary"; r.appendChild(img); };
-    img.src = f;
+  /* ---------- Copiar correo al portapapeles ---------- */
+  var cp = $("copiar-correo");
+  if (cp) {
+    var etiqueta = cp.querySelector(".copiar-t"), aviso = $("copiar-aviso"), reloj = null;
+    var correo = cp.getAttribute("data-correo") || "";
+    function listo(ok) {
+      etiqueta.textContent = ok ? "¡Copiado!" : "Cópialo a mano";
+      cp.classList.toggle("hecho", ok);
+      if (aviso) aviso.textContent = ok ? "Correo copiado al portapapeles." : "No se pudo copiar; selecciona el correo a mano.";
+      clearTimeout(reloj);
+      reloj = setTimeout(function () {
+        etiqueta.textContent = "Copiar"; cp.classList.remove("hecho");
+        if (aviso) aviso.textContent = "";
+      }, 2000);
+    }
+    function aMano() {
+      var ta = document.createElement("textarea");
+      ta.value = correo; ta.setAttribute("readonly", ""); ta.className = "solo-lector";
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      ta.remove(); listo(ok);
+    }
+    cp.addEventListener("click", function () {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(correo).then(function () { listo(true); }, aMano);
+      } else {
+        aMano();
+      }
+    });
   }
 })();

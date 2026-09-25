@@ -31,7 +31,7 @@
     li.appendChild(el("div", "tipo", ext(m.archivo)));
     var c = el("div", "tit");
     var a = el("a", null, m.titulo);
-    a.href = m.archivo; a.target = "_blank"; a.rel = "noopener";
+    a.href = m.archivo; a.target = "_blank"; a.rel = "noopener noreferrer";
     c.appendChild(a);
     if (m.detalle) c.appendChild(el("small", null, m.detalle));
     li.appendChild(c);
@@ -41,7 +41,7 @@
     acc.appendChild(d);
     if (m.solucionario) {
       var s = el("a", "sol", "Solucionario");
-      s.href = m.solucionario; s.target = "_blank"; s.rel = "noopener";
+      s.href = m.solucionario; s.target = "_blank"; s.rel = "noopener noreferrer";
       acc.appendChild(s);
     }
     li.appendChild(acc);
