@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://derek-martell.github.io/sitemap.xml

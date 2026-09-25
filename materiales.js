@@ -31,6 +31,9 @@
     c.appendChild(a);
     if (m.detalle) c.appendChild(el("small", null, m.detalle));
     li.appendChild(c);
+    var d = el("a", "desc", "Descargar");
+    d.href = m.archivo; d.setAttribute("download", ""); d.setAttribute("aria-label", "Descargar " + m.titulo);
+    li.appendChild(d);
     if (m.solucionario) {
       var s = el("a", "sol", "Solucionario");
       s.href = m.solucionario; s.target = "_blank"; s.rel = "noopener";
@@ -49,6 +52,14 @@
   function grupo(id, titulo, n, cuerpo) {
     var s = el("section", "grupo"); s.id = id;
     var h = el("h2", null, titulo + " "); h.appendChild(el("span", "n", n));
+    var cp = el("button", "copiar", "Copiar enlace"); cp.type = "button";
+    cp.setAttribute("aria-label", "Copiar enlace a " + titulo);
+    cp.addEventListener("click", function () {
+      var url = location.origin + location.pathname + "?ciclo=" + encodeURIComponent(actual ? actual.id : "") + "#" + id;
+      var ok = function () { cp.textContent = "Enlace copiado"; setTimeout(function () { cp.textContent = "Copiar enlace"; }, 1800); };
+      try { navigator.clipboard.writeText(url).then(ok); } catch (e) { window.prompt("Copia este enlace", url); }
+    });
+    h.appendChild(cp);
     s.appendChild(h);
     cuerpo.forEach(function (x) { s.appendChild(x); });
     cont.appendChild(s);
@@ -110,7 +121,7 @@
       if (c.profesor) { var p = el("span", "chip dinamico", "Profesor: " + c.profesor); chips.appendChild(p); }
       if (c.horario && c.horario.length) { var h = el("span", "chip dinamico", "Horario: " + c.horario.join(" · ")); chips.appendChild(h); }
     }
-    try { history.replaceState(null, "", "?ciclo=" + encodeURIComponent(c.id)); } catch (e) {}
+    try { history.replaceState(null, "", "?ciclo=" + encodeURIComponent(c.id) + location.hash); } catch (e) {}
     pintar(c);
   }
   ciclos.forEach(function (c) {
@@ -120,6 +131,10 @@
     barra.appendChild(b);
   });
   elegir(actual);
+  if (location.hash.length > 1) {
+    var meta = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (meta) meta.scrollIntoView();
+  }
 
   var act = document.getElementById("actualizado");
   if (act && D.actualizado) act.textContent = "Última actualización: " + D.actualizado;

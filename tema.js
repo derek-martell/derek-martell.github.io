@@ -4,12 +4,16 @@
   function guardar(v) { try { localStorage.setItem(k, v); } catch (e) {} }
   function leer() { try { return localStorage.getItem(k); } catch (e) { return null; } }
   r.setAttribute("data-theme", leer() === "dark" ? "dark" : "light");
+  function etiqueta(b) {
+    b.setAttribute("aria-label", r.getAttribute("data-theme") === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+  }
   document.addEventListener("DOMContentLoaded", function () {
     var b = document.getElementById("tema");
     if (!b) return;
+    etiqueta(b);
     b.addEventListener("click", function () {
       var nuevo = r.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      r.setAttribute("data-theme", nuevo); guardar(nuevo);
+      r.setAttribute("data-theme", nuevo); guardar(nuevo); etiqueta(b);
     });
   });
 })();
