@@ -47,8 +47,9 @@ button.copiar{cursor:pointer;font:600 .8rem var(--display);letter-spacing:0;colo
 button.copiar:hover{color:var(--verde);border-color:var(--verde)}
 
 ul.mat{list-style:none;margin:8px 0 0;padding:0}
-ul.mat li{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
-ul.mat li:first-child{border-top:1px solid var(--line)}
+ul.mat li{display:flex;align-items:center;gap:14px;padding:15px 16px;margin:0 -16px;border-radius:14px;border-bottom:1px solid var(--line);transition:background .15s}
+ul.mat li:hover{background:var(--suave)}
+
 ul.mat .tipo{flex:none;font:700 .72rem var(--display);letter-spacing:.03em;color:var(--verde);background:var(--suave);border-radius:8px;padding:8px 10px;min-width:46px;text-align:center}
 ul.mat .tit{flex:1;min-width:0}
 ul.mat .tit a{display:block;color:var(--ink);text-decoration:none;font:600 1.08rem var(--display)}
@@ -59,10 +60,16 @@ ul.mat a.desc{color:var(--verde);border:1.5px solid var(--verde)}
 ul.mat a.desc:hover{background:var(--suave)}
 ul.mat a.sol{background:var(--verde);color:var(--on)}
 ul.mat a.sol:hover{background:var(--vivo)}
+ul.mat li.vacio:hover{background:none}
 ul.mat li.vacio{display:block;color:var(--mute);font-style:italic;border:1px dashed var(--line);border-radius:14px;text-align:center;padding:18px;margin-top:8px}
 #sin-resultados{display:none;text-align:center;color:var(--mute);padding:34px;font-family:var(--display)}
 
+.mat-acciones{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
+p.nota{color:var(--mute);margin:8px 0 0}
+ul.pronto{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+ul.pronto li{font:500 .92rem var(--display);color:var(--mute);border:1px dashed var(--line);border-radius:99px;padding:6px 14px}
 @media(max-width:860px){
+  .mat-acciones{width:100%;margin-left:60px;justify-content:flex-start}
   .layout{grid-template-columns:1fr;gap:22px}
   aside.indice{position:static;display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
   aside.indice p{display:none}

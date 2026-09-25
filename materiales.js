@@ -35,14 +35,16 @@
     c.appendChild(a);
     if (m.detalle) c.appendChild(el("small", null, m.detalle));
     li.appendChild(c);
+    var acc = el("div", "mat-acciones");
     var d = el("a", "desc", "Descargar");
     d.href = m.archivo; d.setAttribute("download", ""); d.setAttribute("aria-label", "Descargar " + m.titulo);
-    li.appendChild(d);
+    acc.appendChild(d);
     if (m.solucionario) {
       var s = el("a", "sol", "Solucionario");
       s.href = m.solucionario; s.target = "_blank"; s.rel = "noopener";
-      li.appendChild(s);
+      acc.appendChild(s);
     }
+    li.appendChild(acc);
     return li;
   }
   function lista(items) {
@@ -67,6 +69,9 @@
     s.appendChild(h);
     cuerpo.forEach(function (x) { s.appendChild(x); });
     cont.appendChild(s);
+    enlaceIndice(id, titulo, n);
+  }
+  function enlaceIndice(id, titulo, n) {
     var a = el("a", null, titulo + " "); a.href = "#" + id; a.appendChild(el("span", null, n));
     indice.appendChild(a);
   }
@@ -79,20 +84,32 @@
     var vacio = document.getElementById("sin-resultados"); if (vacio) vacio.style.display = "none";
 
     grupo("sillabo", "Sílabo", c.sillabo.length, [c.sillabo.length ? lista(c.sillabo) : proximamente()]);
+    var pendientes = [];
     c.modulos.forEach(function (mod) {
       var n = mod.clases.length + mod.ejercicios.length, cuerpo = [];
+      if (!n) { pendientes.push(mod.titulo); return; }
       if (mod.clases.length) { cuerpo.push(el("h3", null, "Clases")); cuerpo.push(lista(mod.clases)); }
       if (mod.ejercicios.length) { cuerpo.push(el("h3", null, "Ejercicios y solucionarios")); cuerpo.push(lista(mod.ejercicios)); }
-      if (!n) cuerpo.push(proximamente());
       grupo(mod.id, mod.titulo, n, cuerpo);
     });
     var nEval = 0, cuerpoEval = [];
     c.evaluaciones.forEach(function (e) {
+      if (!e.items.length) { pendientes.push(e.titulo + " (prueba)"); return; }
       nEval += e.items.length;
       cuerpoEval.push(el("h3", null, e.titulo));
-      cuerpoEval.push(e.items.length ? lista(e.items) : proximamente());
+      cuerpoEval.push(lista(e.items));
     });
-    grupo("pruebas", "Pruebas dadas", nEval, cuerpoEval);
+    if (nEval) grupo("pruebas", "Pruebas dadas", nEval, cuerpoEval);
+    if (pendientes.length) {
+      var s = el("section", "grupo"); s.id = "proximos";
+      var h = el("h2", null, "Próximamente "); h.appendChild(el("span", "n", pendientes.length));
+      s.appendChild(h);
+      s.appendChild(el("p", "nota", "Todavía no tienen material publicado."));
+      var ul = el("ul", "pronto");
+      pendientes.forEach(function (t) { ul.appendChild(el("li", null, t)); });
+      s.appendChild(ul); cont.appendChild(s);
+      enlaceIndice("proximos", "Próximamente", pendientes.length);
+    }
 
     var enlaces = indice.querySelectorAll("a");
     if ("IntersectionObserver" in window) {

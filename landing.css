@@ -1,12 +1,14 @@
 :root{
   --bg:#f4f7f3;--panel:#ffffff;--ink:#10261a;--mute:#4d6356;--line:#d6e0d8;
   --verde:#25653f;--vivo:#35955c;--suave:#e2eee6;--ambar:#b8790f;--on:#ffffff;
+  --sombra:0 1px 2px rgba(16,38,26,.05),0 10px 28px rgba(16,38,26,.05);
   --display:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
   --texto:"Literata",Georgia,serif;
 }
 :root[data-theme="dark"]{
-  --bg:#0d1a13;--panel:#132419;--ink:#e8f0ea;--mute:#9db3a4;--line:#243a2c;
-  --verde:#7bd19d;--vivo:#4fae76;--suave:#1a3225;--ambar:#e2a33f;--on:#0d1a13;
+  --bg:#0c1811;--panel:#14271c;--ink:#e8f0ea;--mute:#a3b9aa;--line:#2a4534;
+  --verde:#7bd19d;--vivo:#4fae76;--suave:#1d3829;--ambar:#e2a33f;--on:#0c1811;
+  --sombra:0 6px 26px rgba(0,0,0,.45);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -132,3 +134,24 @@ ul.datos li:last-child{border:0}
 
 /* Proyectos */
 .enlaces{display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:12px;font:600 .98rem var(--display)}
+
+/* Sombras de elevación (más marcadas en modo oscuro) */
+.lamina,.perfil{box-shadow:var(--sombra)}
+
+/* Proyectos en tarjetas */
+.grid-proyectos{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:28px}
+.tarjeta-proyecto{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;box-shadow:var(--sombra);transition:transform .18s,border-color .18s}
+.tarjeta-proyecto:hover{transform:translateY(-2px);border-color:var(--verde)}
+.tarjeta-proyecto .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tag{font:600 .82rem var(--display);background:var(--suave);color:var(--verde);padding:4px 12px;border-radius:99px}
+.tarjeta-proyecto h3{font:700 1.35rem/1.2 var(--display);letter-spacing:-.02em;margin:0 0 12px}
+.tarjeta-proyecto p{margin:0}
+.acciones-proyecto{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:22px}
+.btn-link{font:600 .95rem var(--display);border:1.5px solid var(--verde);color:var(--verde);border-radius:99px;padding:8px 16px;text-decoration:none}
+.btn-link:hover{background:var(--suave)}
+
+/* Atajos del gráfico */
+.atajos{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.atajos button{cursor:pointer;font:600 .9rem var(--display);color:var(--ink);background:transparent;border:1.5px solid var(--line);border-radius:99px;padding:6px 15px}
+.atajos button:hover{border-color:var(--verde)}
+.atajos button.on{background:var(--verde);border-color:var(--verde);color:var(--on)}

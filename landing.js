@@ -25,6 +25,13 @@
       return BASE - v * u;
     }
 
+    var atajos = document.querySelectorAll(".atajos button");
+    function marcarAtajos(t) {
+      atajos.forEach(function (b) {
+        var on = +b.getAttribute("data-val") === t;
+        b.classList.toggle("on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
     function pintar(t) {
       var vA = Math.pow(1 + GA, t), vB = Math.pow(1 + GB, t);
       var u = Math.min(UMAX, 285 / Math.max(vB, 3));
@@ -47,11 +54,18 @@
         "Simplificación: ritmo constante, sin altibajos.";
       $("torres-d").textContent = "A los " + t + " años, el país A multiplicó su ingreso por " + coma(vA, 1) +
         " y el país B por " + coma(vB, 1) + ".";
+      marcarAtajos(t);
     }
     var animando = null;
     rango.addEventListener("input", function () {
       if (animando) { cancelAnimationFrame(animando); animando = null; }
       pintar(+rango.value);
+    });
+    atajos.forEach(function (b) {
+      b.addEventListener("click", function () {
+        if (animando) { cancelAnimationFrame(animando); animando = null; }
+        rango.value = b.getAttribute("data-val"); pintar(+rango.value);
+      });
     });
 
     /* Único movimiento de la página: las torres crecen cuando el gráfico entra en pantalla */

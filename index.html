@@ -88,24 +88,25 @@
 
 <section class="bloque" id="proyectos"><div class="wrap">
   <h2>Proyectos</h2>
-  <dl class="filas">
-    <div class="fila">
-      <dt>Libertad económica y crecimiento en América Latina</dt>
-      <dd>
-        Investigación sobre el efecto de la libertad económica en el crecimiento del PBI de seis países (Perú, Bolivia, Ecuador, Colombia, Guatemala y México), de 1995 a 2023. Tras detectar autocorrelación y heterocedasticidad, se estiman modelos Prais-Winsten y de mínimos cuadrados generalizados factibles.
-        <span class="enlaces">
-          <a href="https://github.com/derek-martell/Libertad_Econ-mica-">Código y datos en Stata</a>
-          <a href="https://github.com/derek-martell/Libertad-Econ-mica-en-Am-rica-Latina">Análisis en R</a>
-        </span>
-      </dd>
-    </div>
-    <div class="fila">
-      <dt>Tablero del gasto en la franja electoral</dt>
-      <dd>
-        Tablero interactivo de <a href="https://mundo-social.com/">Mundo Social</a> que ordena los datos oficiales del Plan de Medios de la ONPE: cuánto gasta cada partido, en qué regiones y en qué medios.
-      </dd>
-    </div>
-  </dl>
+  <div class="grid-proyectos">
+    <article class="tarjeta-proyecto">
+      <div class="tags"><span class="tag">Econometría</span><span class="tag">Stata</span><span class="tag">R</span></div>
+      <h3>Libertad económica y crecimiento en América Latina</h3>
+      <p>Efecto de la libertad económica en el crecimiento del PBI de seis países (Perú, Bolivia, Ecuador, Colombia, Guatemala y México), de 1995 a 2023. Tras detectar autocorrelación y heterocedasticidad, se estiman modelos Prais-Winsten y de mínimos cuadrados generalizados factibles.</p>
+      <div class="acciones-proyecto">
+        <a class="btn-link" href="https://github.com/derek-martell/Libertad_Econ-mica-">Código y datos en Stata</a>
+        <a class="btn-link" href="https://github.com/derek-martell/Libertad-Econ-mica-en-Am-rica-Latina">Análisis en R</a>
+      </div>
+    </article>
+    <article class="tarjeta-proyecto">
+      <div class="tags"><span class="tag">Mundo Social</span><span class="tag">Datos de la ONPE</span><span class="tag">Tablero</span></div>
+      <h3>Tablero del gasto en la franja electoral</h3>
+      <p>Tablero interactivo que ordena los datos oficiales del Plan de Medios de la ONPE: cuánto gasta cada partido, en qué regiones y en qué medios.</p>
+      <div class="acciones-proyecto">
+        <a class="btn-link" href="https://mundo-social.com/">Conocer Mundo Social</a>
+      </div>
+    </article>
+  </div>
 </div></section>
 
 <section class="bloque" id="curso"><div class="wrap">
@@ -146,6 +147,12 @@
       <label for="anios">Pasan</label>
       <input id="anios" type="range" min="0" max="70" step="1" value="35">
       <output id="anios-v" for="anios">35 años</output>
+    </div>
+    <div class="atajos" role="group" aria-label="Saltar a un número de años">
+      <button type="button" data-val="10" aria-pressed="false">10 años</button>
+      <button type="button" data-val="25" aria-pressed="false">25 años</button>
+      <button type="button" data-val="35" aria-pressed="true" class="on">35 años</button>
+      <button type="button" data-val="50" aria-pressed="false">50 años</button>
     </div>
     <p class="lectura" id="lectura" aria-live="polite"></p>
   </figure>
