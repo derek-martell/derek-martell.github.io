@@ -9,6 +9,7 @@ window.MATERIALES = {
     {
      "titulo": "Silabo Macroeconomia III 2026-I-2",
      "detalle": "205 KB · actualizado 19/09/2026",
+     "fecha": "2026-09-19",
      "archivo": "materiales/2026-II/silabo/silabo-macroeconomia-iii-2026-i-2.pdf"
     }
    ],
@@ -21,21 +22,25 @@ window.MATERIALES = {
       {
        "titulo": "Introducción",
        "detalle": "391 KB · actualizado 23/09/2026",
+       "fecha": "2026-09-23",
        "archivo": "materiales/2026-II/m1-matematica/ejercicios/introduccion.pdf"
       },
       {
        "titulo": "Optimización Estática I",
        "detalle": "320 KB · actualizado 23/09/2026",
+       "fecha": "2026-09-23",
        "archivo": "materiales/2026-II/m1-matematica/ejercicios/optimizacion-estatica-i.pdf"
       },
       {
        "titulo": "Optimización Estática II",
        "detalle": "67 KB · actualizado 23/09/2026",
+       "fecha": "2026-09-23",
        "archivo": "materiales/2026-II/m1-matematica/ejercicios/optimizacion-estatica-ii.pdf"
       },
       {
        "titulo": "PD Matemática - PDMatemática",
        "detalle": "61 KB · actualizado 20/09/2026",
+       "fecha": "2026-09-20",
        "archivo": "materiales/2026-II/m1-matematica/ejercicios/pd-matematica-pdmatematica.pdf"
       }
      ]
@@ -48,6 +53,7 @@ window.MATERIALES = {
       {
        "titulo": "PD Solow Ramsey",
        "detalle": "143 KB · actualizado 14/09/2026",
+       "fecha": "2026-09-14",
        "archivo": "materiales/2026-II/m2-solow/ejercicios/pd-solow-ramsey.pdf"
       }
      ]
@@ -60,6 +66,7 @@ window.MATERIALES = {
       {
        "titulo": "PD Solow Ramsey",
        "detalle": "143 KB · actualizado 14/09/2026",
+       "fecha": "2026-09-14",
        "archivo": "materiales/2026-II/m3-ramsey/ejercicios/pd-solow-ramsey.pdf"
       }
      ]
@@ -110,6 +117,7 @@ window.MATERIALES = {
       {
        "titulo": "Trabajo Final - Macroeconomía III",
        "detalle": "197 KB · actualizado 11/09/2026",
+       "fecha": "2026-09-11",
        "archivo": "materiales/2026-II/evaluaciones/trabajo-final/trabajo-final-macroeconomia-iii.docx"
       }
      ]
