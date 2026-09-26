@@ -36,6 +36,12 @@ window.MATERIALES = {
        "detalle": "67 KB · actualizado 23/09/2026",
        "fecha": "2026-09-23",
        "archivo": "materiales/2026-II/m1-matematica/ejercicios/solucionario-parte-ii.pdf"
+      },
+      {
+       "titulo": "Solucionario Parte III",
+       "detalle": "404 KB · actualizado 26/09/2026",
+       "fecha": "2026-09-26",
+       "archivo": "materiales/2026-II/m1-matematica/ejercicios/solucionario-parte-iii.pdf"
       }
      ]
     },
