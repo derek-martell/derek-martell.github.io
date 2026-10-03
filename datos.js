@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "26/09/2026",
+ "actualizado": "03/10/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -126,7 +126,38 @@ window.MATERIALES = {
    "id": "2026-I",
    "titulo": "2026-I",
    "sillabo": [],
-   "modulos": [],
+   "modulos": [
+    {
+     "id": "m1",
+     "titulo": "M1 · Solow",
+     "clases": [],
+     "ejercicios": []
+    },
+    {
+     "id": "m2",
+     "titulo": "M2 · Ramsey",
+     "clases": [],
+     "ejercicios": []
+    },
+    {
+     "id": "m3",
+     "titulo": "M3 · Modelo de Inversión",
+     "clases": [],
+     "ejercicios": []
+    },
+    {
+     "id": "m4",
+     "titulo": "M4 · Política Fiscal",
+     "clases": [],
+     "ejercicios": []
+    },
+    {
+     "id": "m5",
+     "titulo": "M5 · Política Monetaria",
+     "clases": [],
+     "ejercicios": []
+    }
+   ],
    "evaluaciones": [
     {
      "titulo": "Parcial",
