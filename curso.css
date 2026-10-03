@@ -13,11 +13,17 @@ main.interior{padding:48px 0 80px}
 .chip{font:500 .88rem var(--display);background:var(--bg);border:1px solid var(--line);color:var(--mute);border-radius:99px;padding:5px 14px}
 
 /* Docencia: lista de cursos */
+.cursos-lista{display:grid;gap:14px}
 .curso-grande{display:flex;gap:22px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:28px 30px;text-decoration:none;color:var(--ink);transition:border-color .15s}
 .curso-grande:hover{border-color:var(--verde)}
 .curso-grande h3{margin:0;font:700 1.5rem var(--display);letter-spacing:-.02em}
 .curso-grande p{margin:6px 0 0;color:var(--mute);font-size:1rem}
 .curso-grande .fl{margin-left:auto;font:600 1.6rem var(--display);color:var(--verde)}
+
+/* Página de curso sin material público todavía. */
+.curso-vacio{max-width:720px;border:1px dashed var(--line);border-radius:18px;padding:34px;background:var(--panel)}
+.curso-vacio h2{margin:0 0 10px}
+.curso-vacio p{margin:0;color:var(--mute);max-width:58ch}
 
 /* Proyectos: misma gramática editorial, una página propia. */
 .cabecera-proyectos .sobrelinea{margin-bottom:14px}
@@ -84,6 +90,7 @@ ul.pronto li{font:500 .92rem var(--display);color:var(--mute);border:1px dashed 
   aside.indice a{border:1px solid var(--line);border-radius:99px;white-space:nowrap}
   ul.mat li{flex-wrap:wrap}
   .curso-grande{padding:22px}
+  .curso-vacio{padding:24px}
   .proyectos-pagina .fila{grid-template-columns:1fr;gap:8px;padding:30px 0}
 }
 @media print{.barra,.buscar,aside.indice,#tema,.ciclos-barra,button.copiar{display:none}}
