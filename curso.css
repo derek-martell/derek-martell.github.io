@@ -19,6 +19,14 @@ main.interior{padding:48px 0 80px}
 .curso-grande p{margin:6px 0 0;color:var(--mute);font-size:1rem}
 .curso-grande .fl{margin-left:auto;font:600 1.6rem var(--display);color:var(--verde)}
 
+/* Proyectos: misma gramática editorial, una página propia. */
+.cabecera-proyectos .sobrelinea{margin-bottom:14px}
+.proyectos-pagina .filas{margin-top:0}
+.proyectos-pagina .fila{grid-template-columns:minmax(0,3fr) minmax(0,8fr);padding:42px 0}
+.proyectos-pagina .proyecto h2{font:600 clamp(1.55rem,3vw,2.35rem)/1.15 var(--texto);letter-spacing:-.025em;margin:0 0 14px;max-width:32ch}
+.proyectos-pagina .proyecto>div>p:not(.enlaces){max-width:64ch}
+.proyectos-pagina .enlaces{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:18px;font:600 .95rem var(--display)}
+
 /* Página del curso */
 .layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:52px;align-items:start}
 aside.indice{position:sticky;top:24px;font:500 .95rem var(--display)}
@@ -76,5 +84,6 @@ ul.pronto li{font:500 .92rem var(--display);color:var(--mute);border:1px dashed 
   aside.indice a{border:1px solid var(--line);border-radius:99px;white-space:nowrap}
   ul.mat li{flex-wrap:wrap}
   .curso-grande{padding:22px}
+  .proyectos-pagina .fila{grid-template-columns:1fr;gap:8px;padding:30px 0}
 }
 @media print{.barra,.buscar,aside.indice,#tema,.ciclos-barra,button.copiar{display:none}}

@@ -1,10 +1,65 @@
 (function () {
   var ALFA = 0.33, ND = 0.08, KMAX = 20, YMAX = 1.7;
   var X0 = 52, X1 = 500, Y0 = 330, Y1 = 20;
+  var reduceMovimiento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function X(k) { return X0 + (k / KMAX) * (X1 - X0); }
   function Y(v) { return Y0 - (v / YMAX) * (Y0 - Y1); }
   function $(id) { return document.getElementById(id); }
   function coma(n, d) { return n.toFixed(d).replace(".", ","); }
+
+  /* ---------- Vitrina variable de la portada ---------- */
+  var tabsVitrina = document.querySelectorAll(".vitrina-tabs [role=tab]");
+  var panelVitrina = document.querySelectorAll(".vitrina-panel");
+  var animacionPanel = null;
+  function activarHistoria(tab, enfocar) {
+    tabsVitrina.forEach(function (boton) {
+      var activo = boton === tab;
+      boton.setAttribute("aria-selected", activo ? "true" : "false");
+      boton.tabIndex = activo ? 0 : -1;
+    });
+    panelVitrina.forEach(function (panel) {
+      panel.hidden = panel.id !== tab.getAttribute("aria-controls");
+    });
+    var actual = $(tab.getAttribute("aria-controls"));
+    if (animacionPanel) animacionPanel.cancel();
+    if (actual && !reduceMovimiento && actual.animate) {
+      animacionPanel = actual.animate([
+        { opacity: 0, transform: "translateY(12px)" },
+        { opacity: 1, transform: "translateY(0)" }
+      ], { duration: 360, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+    }
+    if (enfocar) tab.focus();
+  }
+  if (tabsVitrina.length) {
+    var semilla = window.crypto && window.crypto.getRandomValues ? window.crypto.getRandomValues(new Uint32Array(1))[0] : Math.floor(Math.random() * 1000);
+    activarHistoria(tabsVitrina[semilla % tabsVitrina.length], false);
+    tabsVitrina.forEach(function (tab, indice) {
+      tab.addEventListener("click", function () { activarHistoria(tab, false); });
+      tab.addEventListener("keydown", function (evento) {
+        if (evento.key !== "ArrowLeft" && evento.key !== "ArrowRight") return;
+        evento.preventDefault();
+        var paso = evento.key === "ArrowRight" ? 1 : -1;
+        activarHistoria(tabsVitrina[(indice + paso + tabsVitrina.length) % tabsVitrina.length], true);
+      });
+    });
+  }
+
+  /* Entrada suave y progresiva para dar ritmo sin ocultar contenido sin JS. */
+  if (!reduceMovimiento && "IntersectionObserver" in window) {
+    var revelables = document.querySelectorAll("section.bloque, .fila, ul.ultimo li");
+    var revelar = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (!entrada.isIntersecting) return;
+        entrada.target.classList.add("visible");
+        revelar.unobserve(entrada.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+    revelables.forEach(function (el, i) {
+      el.setAttribute("data-reveal", "");
+      el.classList.add("retraso-" + ((i % 5) + 1));
+      revelar.observe(el);
+    });
+  }
 
   /* ---------- Dos economías, dos ritmos de crecimiento ---------- */
   var GA = 0.02, GB = 0.04, UMAX = 44, BASE = 330;
