@@ -44,23 +44,6 @@
     });
   }
 
-  /* Entrada suave y progresiva para dar ritmo sin ocultar contenido sin JS. */
-  if (!reduceMovimiento && "IntersectionObserver" in window) {
-    var revelables = document.querySelectorAll("section.bloque, .fila, ul.ultimo li");
-    var revelar = new IntersectionObserver(function (entradas) {
-      entradas.forEach(function (entrada) {
-        if (!entrada.isIntersecting) return;
-        entrada.target.classList.add("visible");
-        revelar.unobserve(entrada.target);
-      });
-    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
-    revelables.forEach(function (el, i) {
-      el.setAttribute("data-reveal", "");
-      el.classList.add("retraso-" + ((i % 5) + 1));
-      revelar.observe(el);
-    });
-  }
-
   /* ---------- Dos economías, dos ritmos de crecimiento ---------- */
   var GA = 0.02, GB = 0.04, UMAX = 44, BASE = 330;
   var svg = $("torres"), rango = $("anios");
