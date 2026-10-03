@@ -136,36 +136,97 @@ window.MATERIALES = {
     {
      "id": "m2",
      "titulo": "M2 · Ramsey",
-     "clases": [],
+     "clases": [
+      {
+       "titulo": "Modelo de Ramsey",
+       "detalle": "415 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/m2-ramsey/clases/modelo-de-ramsey.pdf"
+      }
+     ],
      "ejercicios": []
     },
     {
      "id": "m3",
      "titulo": "M3 · Modelo de Inversión",
-     "clases": [],
+     "clases": [
+      {
+       "titulo": "Modelo de Inversión",
+       "detalle": "180 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/m3-modelo-de-inversion/clases/modelo-de-inversion.pdf"
+      }
+     ],
      "ejercicios": []
     },
     {
      "id": "m4",
      "titulo": "M4 · Política Fiscal",
-     "clases": [],
+     "clases": [
+      {
+       "titulo": "Política Fiscal",
+       "detalle": "139 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/m4-politica-fiscal/clases/politica-fiscal.pdf"
+      }
+     ],
      "ejercicios": []
     },
     {
      "id": "m5",
      "titulo": "M5 · Política Monetaria",
-     "clases": [],
-     "ejercicios": []
+     "clases": [
+      {
+       "titulo": "Política Monetaria",
+       "detalle": "288 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/m5-politica-monetaria/clases/politica-monetaria.pdf"
+      }
+     ],
+     "ejercicios": [
+      {
+       "titulo": "Ejercicios de Política Monetaria",
+       "detalle": "187 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/m5-politica-monetaria/ejercicios/ejercicios-de-politica-monetaria.pdf"
+      }
+     ]
     }
    ],
    "evaluaciones": [
     {
      "titulo": "Parcial",
-     "items": []
+     "items": [
+      {
+       "titulo": "Parcial Macro III",
+       "detalle": "132 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/evaluaciones/parcial/parcial-macro-iii.pdf"
+      },
+      {
+       "titulo": "Solucionario",
+       "detalle": "183 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/evaluaciones/parcial/solucionario.pdf"
+      }
+     ]
     },
     {
      "titulo": "Final",
-     "items": []
+     "items": [
+      {
+       "titulo": "Parcial Macro III",
+       "detalle": "232 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/evaluaciones/final/parcial-macro-iii.pdf"
+      },
+      {
+       "titulo": "Solucionario Macro III",
+       "detalle": "359 KB · actualizado 03/10/2026",
+       "fecha": "2026-10-03",
+       "archivo": "materiales/2026-I/evaluaciones/final/solucionario-macro-iii.pdf"
+      }
+     ]
     },
     {
      "titulo": "Trabajo Final",
