@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "03/10/2026",
+ "actualizado": "07/10/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -50,6 +50,12 @@ window.MATERIALES = {
      "titulo": "M2 · Solow",
      "clases": [],
      "ejercicios": [
+      {
+       "titulo": "Ejercicios",
+       "detalle": "144 KB · actualizado 06/10/2026",
+       "fecha": "2026-10-06",
+       "archivo": "materiales/2026-II/m2-solow/ejercicios/ejercicios.pdf"
+      },
       {
        "titulo": "PD Solow Ramsey",
        "detalle": "143 KB · actualizado 14/09/2026",
