@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "15/10/2026",
+ "actualizado": "17/10/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -8,8 +8,8 @@ window.MATERIALES = {
    "sillabo": [
     {
      "titulo": "Silabo Macroeconomia III 2026-II",
-     "detalle": "205 KB · actualizado 19/09/2026",
-     "fecha": "2026-09-19",
+     "detalle": "257 KB · actualizado 17/10/2026",
+     "fecha": "2026-10-17",
      "archivo": "materiales/2026-II/silabo/silabo-macroeconomia-iii-2026-ii.pdf"
     }
    ],
