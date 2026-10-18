@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "17/10/2026",
+ "actualizado": "18/10/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -110,6 +110,12 @@ window.MATERIALES = {
        "detalle": "195 KB · actualizado 10/10/2026",
        "fecha": "2026-10-10",
        "archivo": "materiales/2026-II/evaluaciones/parcial/examen-macroeconomia-iii-solow-ramsey.pdf"
+      },
+      {
+       "titulo": "Solucionario Examen Parcial",
+       "detalle": "299 KB · actualizado 17/10/2026",
+       "fecha": "2026-10-17",
+       "archivo": "materiales/2026-II/evaluaciones/parcial/solucionario-examen-parcial.pdf"
       }
      ]
     },
