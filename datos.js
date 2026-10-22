@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "18/10/2026",
+ "actualizado": "21/10/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -68,7 +68,14 @@ window.MATERIALES = {
      "id": "m3",
      "titulo": "M3 · Ramsey",
      "clases": [],
-     "ejercicios": []
+     "ejercicios": [
+      {
+       "titulo": "PD 3",
+       "detalle": "256 KB · actualizado 21/10/2026",
+       "fecha": "2026-10-21",
+       "archivo": "materiales/2026-II/m3-ramsey/ejercicios/pd-3.pdf"
+      }
+     ]
     },
     {
      "id": "m4",
