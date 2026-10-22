@@ -72,6 +72,27 @@ def run_validation():
     code, stdout, stderr = run_cmd([sys.executable, val_script])
     return code == 0, stdout + "\n" + stderr
 
+def publish(branch_name, main_branch):
+    """Une la rama de trabajo a la rama principal y la sube a GitHub (GitHub Pages publica desde ahi)."""
+    steps = [
+        (["git", "checkout", main_branch], f"Cambiando a '{main_branch}'"),
+        (["git", "pull", "--ff-only", "origin", main_branch], "Trayendo ultimos cambios de GitHub"),
+        (["git", "merge", "--no-edit", branch_name], f"Uniendo '{branch_name}'"),
+        (["git", "push", "origin", main_branch], "Subiendo a GitHub"),
+    ]
+    for cmd, desc in steps:
+        log(desc + "...", "[Git]")
+        code, out, err = run_cmd(cmd)
+        if code != 0:
+            log(f"Fallo '{' '.join(cmd)}': {(err or out).strip()}", "[ERROR]")
+            log(f"Tus cambios siguen a salvo en la rama '{branch_name}'. Resuelve el problema y ejecuta:", "   ")
+            log(f"    git checkout {main_branch}", "   ")
+            log(f"    git merge {branch_name}", "   ")
+            log(f"    git push origin {main_branch}", "   ")
+            return False
+    log(f"Publicado. GitHub Pages actualizara la pagina en 1-2 minutos.", "[OK]")
+    return True
+
 def main():
     parser = argparse.ArgumentParser(description="Supervisor Multi-Agente para derek-martell.github.io")
     parser.add_argument("task", nargs="*", help="Descripcion de la tarea a realizar")
@@ -196,10 +217,14 @@ def main():
             short_task = task_description[:50].replace('"', "'").replace("\n", " ")
             run_cmd(["git", "commit", "-m", f"feat(supervisor): {short_task}"])
             log(f"Cambios guardados en la rama: '{branch_name}'", "[Git]")
-            log(f"Para ver tus cambios abre 'index.html' en tu navegador.", "   ")
-            log(f"Para unir los cambios a master cuando estes satisfecho:", "   ")
-            log(f"    git checkout master", "   ")
-            log(f"    git merge {branch_name}", "   ")
+            if cfg.get("auto_publish", True):
+                publish(branch_name, cfg.get("main_branch", "master"))
+            else:
+                log(f"Para ver tus cambios abre 'index.html' en tu navegador.", "   ")
+                log(f"Para unir los cambios a master cuando estes satisfecho:", "   ")
+                log(f"    git checkout master", "   ")
+                log(f"    git merge {branch_name}", "   ")
+                log(f"    git push origin master", "   ")
     else:
         print("  ⚠️ TAREA COMPLETADA CON ADVERTENCIAS (Requiere revision manual)")
         print("=" * 65)
