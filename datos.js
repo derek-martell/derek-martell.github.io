@@ -1,6 +1,6 @@
 /* GENERADO por publicar.py. No editar a mano: se sobrescribe. */
 window.MATERIALES = {
- "actualizado": "21/10/2026",
+ "actualizado": "08/11/2026",
  "ciclos": [
   {
    "id": "2026-II",
@@ -86,7 +86,14 @@ window.MATERIALES = {
     {
      "id": "m5",
      "titulo": "M5 · Modelo Consumo Inversión",
-     "clases": [],
+     "clases": [
+      {
+       "titulo": "Teoría Dinámica del Consumo",
+       "detalle": "783 KB · actualizado 08/11/2026",
+       "fecha": "2026-11-08",
+       "archivo": "materiales/2026-II/m5-modelo-consumo-inversion/clases/teoria-dinamica-del-consumo.pdf"
+      }
+     ],
      "ejercicios": []
     },
     {
